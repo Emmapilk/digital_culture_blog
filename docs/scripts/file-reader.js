@@ -50,8 +50,9 @@ function handleOutputPost(index, fileText) {
 	document.getElementById('title').innerHTML = lines[0];
 	document.getElementById('date').innerHTML = lines[1];
 	document.getElementById('img').src = lines[2];
-	document.getElementById('summary').innerHTML = lines[3];
-	document.getElementById('content').innerHTML = lines.slice(4).join('<br />');
+	document.getElementById('imgRef').innerHTML = lines[3];
+	document.getElementById('summary').innerHTML = lines[4];
+	document.getElementById('content').innerHTML = lines.slice(5).join('<br />');
 }
 
 function handleOutputHome(index, fileText) {
@@ -62,9 +63,10 @@ function handleOutputHome(index, fileText) {
 	'<!-- Blog Post --> \n' +
     '    <div class="card mb-4"> \n' +
     '      <img class="card-img-top" src="' + lines[2] + '" alt="Card image cap"> \n' +
+    '      <p class="card-footer"><i>' + lines[3] + '</i></p> \n' +
     '      <div class="card-body"> \n' +
     '        <h2 class="card-title">' + lines[0] + '</h2> \n' +
-    '        <p class="card-text">' + lines[3].substr(0, 250) + '...</p> \n' +
+    '        <p class="card-text">' + lines[4].substr(0, 250) + '...</p> \n' +
     '        <a href="post#'+ index +'" class="btn btn-primary">Read More &rarr;</a> \n' +
     '      </div> \n' +
     '      <div class="card-footer text-muted"> \n' +
